@@ -3,7 +3,7 @@ package com.passportphoto.app.processing
 import android.content.ContentValues
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.pdf.PrintedPdfDocument
+import android.print.pdf.PrintedPdfDocument
 import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
