@@ -71,7 +71,7 @@ class CameraController(
 
         capture.takePicture(
             outputOptions,
-            cameraExecutor,
+            ContextCompat.getMainExecutor(context),
             object : ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
                     try {
