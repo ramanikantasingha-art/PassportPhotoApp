@@ -2,6 +2,7 @@ package com.passportphoto.app.ui.screens
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.widget.Toast
 import androidx.camera.view.PreviewView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -113,8 +114,13 @@ fun CameraScreen(
                                 viewModel.onPhotoCaptured(captured)
                                 onPhotoReady()
                             },
-                            onError = {
+                            onError = { exception ->
                                 isCapturing = false
+                                Toast.makeText(
+                                    context,
+                                    "Capture failed: ${exception.message}",
+                                    Toast.LENGTH_LONG
+                                ).show()
                             }
                         )
                     },
